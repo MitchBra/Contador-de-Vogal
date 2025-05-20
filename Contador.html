@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Vogais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Vogais</h1>
+    <p>Digite uma palavra e veja quantas vogais ela tem:</p>
+    <input type="text" id="entrada" placeholder="Digite uma palavra">
+    <button onclick="contarVogais()">Contar Vogais</button>
+    <h2 id="resultado"></h2>
+
+    <script>
+        function contarVogais() {
+            let palavra = document.getElementById("entrada").value.toLowerCase();
+            let contador = 0;
+            
+            for (let i = 0; i < palavra.length; i++) {
+                if (["a", "e", "i", "o", "u"].includes(palavra[i])) {
+                    contador++;
+                }
+            }
+            
+            document.getElementById("resultado").innerText = `A palavra tem ${contador} vogais.`;
+        }
+    </script>
+</body>
+</html>
